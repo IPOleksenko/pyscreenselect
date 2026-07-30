@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyscreenselect"
+version = "0.1.0"
+description = "Cross-platform screen region selector library"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    { name = "IPOleksenko" }
+]
+keywords = [
+    "screen",
+    "selection",
+    "overlay",
+    "coordinates",
+    "cross-platform"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+]
+
+dependencies = [
+    "screeninfo>=0.8.1",
+    "glfw>=2.10.2"
+]
