@@ -28,5 +28,5 @@ classifiers = [
 
 dependencies = [
     "screeninfo>=0.8.1",
-    "glfw>=2.10.2"
+    "PyQt5>=5.15.11",
 ]
