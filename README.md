@@ -159,14 +159,6 @@ You can customize the overlay appearance using parameters such as:
 - selection_border_width — border thickness
 - font / font_size — text styling
 
-## Running the demo
-
-From the repository root, run:
-
-```bash
-python main.py
-```
-
 ## Authors
 
 - [IPOleksenko](https://github.com/IPOleksenko) (owner) — Developer
