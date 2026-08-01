@@ -38,12 +38,25 @@ class Monitor:
     def is_primary(self, monitor) -> bool:
         return monitor.is_primary
 
+    def get_monitor_at(self, x: int, y: int):
+        return next(
+            (m for m in self.get_monitors() if self.contains(m, x, y)),
+            None,
+        )
+
     def get_monitor_at_cursor(self):
-        cursor_pos = QCursor.pos()
-        for monitor in self.get_monitors():
-            if (
-                monitor.x <= cursor_pos.x() <= monitor.x + monitor.width
-                and monitor.y <= cursor_pos.y() <= monitor.y + monitor.height
-            ):
-                return monitor
-        return None
+        pos = QCursor.pos()
+        return self.get_monitor_at(pos.x(), pos.y())
+    
+    def get(self, index: int):
+        monitors = self.get_monitors()
+        return monitors[index] if 0 <= index < len(monitors) else None
+
+    def contains(self, monitor, x: int, y: int) -> bool:
+        return (
+            monitor.x <= x < monitor.x + monitor.width
+            and monitor.y <= y < monitor.y + monitor.height
+        )
+
+    def size(self, monitor) -> tuple[int, int]:
+        return monitor.width, monitor.height
